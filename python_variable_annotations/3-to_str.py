@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module that contains a function to compute the floor of a number."""
+"""Module that contains a function to return string rper of a float"""
 
 
 def to_str(n: float) -> str:
