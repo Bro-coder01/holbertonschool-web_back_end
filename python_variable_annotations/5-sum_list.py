@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-from typing import List
 """Module that contains a function to return string rper of a float"""
+from typing import List
 
 
 def sum_list(input_list: List[float]) -> float:
