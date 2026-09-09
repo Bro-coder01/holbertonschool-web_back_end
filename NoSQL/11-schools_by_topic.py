@@ -7,4 +7,4 @@ def schools_by_topic(mongo_collection, topic):
     """
     Changes all topics of a school document based on the school name.
     """
-    return list(mongo_collection.find({"topic" : topic}))
+    return list(mongo_collection.find({"topics" : topic}))
