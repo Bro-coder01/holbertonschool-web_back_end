@@ -3,9 +3,12 @@ const fs = require('fs');
 
 const app = express();
 const PORT = 1245;
-const DB_FILE = process.argv.length > 2 ? process.argv[2] : '';
 
-
+/**
+ * Reads and processes student data asynchronously from a CSV file.
+ * @param {String} dataPath - The path to the CSV database file.
+ * @returns {Promise<String>}
+ */
 const countStudents = (dataPath) => new Promise((resolve, reject) => {
   if (!dataPath) {
     reject(new Error('Cannot load the database'));
@@ -59,9 +62,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
+  const dbFile = process.argv.length > 2 ? process.argv[2] : '';
   const responseText = 'This is the list of our students\n';
 
-  countStudents(DB_FILE)
+  countStudents(dbFile)
     .then((report) => {
       res.send(`${responseText}${report}`);
     })
